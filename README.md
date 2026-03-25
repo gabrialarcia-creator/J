@@ -29,24 +29,25 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:'Syne',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;cursor:none}
+a{cursor:pointer!important}
 
 .cursor{width:8px;height:8px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:transform .15s ease;mix-blend-mode:difference}
 .cursor-ring{width:36px;height:36px;border:1px solid rgba(201,168,76,.4);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:transform .4s ease}
 #progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:200;width:0%;transition:width .1s linear}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 96px;height:64px;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(0,0,0,.06)}
-.nav-logo{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(0,0,0,.06)}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap}
 .nav-items{display:flex;gap:0;list-style:none}
-.nav-items a{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#000;font-weight:700;text-decoration:none;padding:8px 16px;transition:color .2s;position:relative}
+.nav-items a{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#000;font-weight:700;text-decoration:none;padding:8px 10px;transition:color .2s;position:relative;white-space:nowrap}
 .nav-items a::after{content:'';position:absolute;bottom:0;left:16px;right:16px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .2s}
 .nav-items a:hover{color:var(--gold)}
 .nav-items a:hover::after{transform:scaleX(1)}
 .nav-cta{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(201,168,76,.4);padding:8px 20px;text-transform:uppercase;cursor:none;display:flex;align-items:center;gap:8px;background:rgba(201,168,76,.05)}
 .nav-cta .bme-icon{width:18px;height:18px;background:var(--gold);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--bg);font-weight:800;font-family:'Syne',sans-serif;flex-shrink:0}
 
-section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 96px 80px;position:relative;overflow:hidden;scroll-margin-top:64px}
+section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 96px 80px;position:relative;overflow:hidden}
 section+section{border-top:1px solid var(--border)}
-.sec-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.25em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:16px;padding-left:0}
+.sec-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.25em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:16px}
 .sec-num::before{content:'';width:32px;height:1px;background:var(--gold)}
 .sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,68px);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:16px;letter-spacing:-.01em}
 .sec-title em{font-style:italic;color:var(--gold)}
@@ -248,7 +249,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 96px
 @media(max-width:960px){
   section{padding:100px 32px 60px}
   .macro-grid,.data-grid,.sl-grid,.conc-pillars,.kpi-row,.escenario-box,.estrategia-grid,.estrategia-resumen{grid-template-columns:1fr}
-  nav{padding:0 32px}
+  nav{padding:0 24px}
   .nav-items{display:none}
   #hero{padding:0 32px}
   footer{flex-direction:column;gap:24px;padding:40px 32px}
@@ -270,7 +271,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 96px
     <li><a href="#treasury">Treasury</a></li>
     <li><a href="#bund">Bund</a></li>
     <li><a href="#estrategia">Estrategia</a></li>
-    <li><a href="#riesgos">Riesgos &amp; Conclusión</a></li>
+    <li><a href="#riesgos">Riesgos</a></li>
+    <li><a href="#conclusion">Conclusión</a></li>
   </ul>
   <div class="nav-cta" style="padding:4px 12px;background:transparent;border:none"><img src="data:image/png;base64,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" alt="Instituto BME" style="height:36px;width:auto;display:block"></div>
 </nav>
@@ -310,7 +312,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 96px
 <!-- ═══ 02 MACRO ═══════════════════════════════════════════ -->
 <section id="macro">
   <div class="sec-num reveal">02 — Análisis Macro</div>
-  <h2 class="sec-title reveal d1" style="text-align:center">BCE sube · FED baja —<br><em>dos ciclos opuestos</em></h2>
+  <h2 class="sec-title reveal d1">BCE sube · FED baja<br><em>dos ciclos opuestos</em></h2>
   <p class="sec-lead reveal d2">El entorno macro de 2026 está definido por una divergencia. La expansión fiscal en EE.UU. con el OBBB y los frentes abiertos en Europa crean una asimetría de tipos que es la base del trade. Sumado al entorno actual de los precios de la energía.</p>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto auto auto auto auto auto;gap:2px;margin-bottom:24px">
@@ -318,29 +320,41 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 96px
     <!-- Fila 1: cabecera bandera + badge -->
     <div class="macro-panel eu reveal d2" style="border-bottom:none;padding-bottom:0">
       <div style="display:flex;align-items:center;justify-content:space-between">
-        <span class="mp-flag" style="margin:0">🇩🇪</span>
+        <span style="display:flex;align-items:center;gap:8px"><span style="font-size:28px">🇩🇪</span><img src="data:image/png;base64,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" style="height:16px;width:auto;vertical-align:middle;margin-right:4px;border-radius:2px"></span>
         <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--red);letter-spacing:.12em;padding:5px 12px;border:1px solid rgba(176,30,30,.4);background:var(--red-dim)">SUBIDAS PREVISTAS</span>
       </div>
     </div>
     <div class="macro-panel us reveal d3" style="border-bottom:none;padding-bottom:0">
       <div style="display:flex;align-items:center;justify-content:space-between">
-        <span class="mp-flag" style="margin:0">🇺🇸</span>
+        <span style="display:flex;align-items:center;gap:8px"><span style="font-size:28px">🇺🇸</span><img src="data:image/png;base64,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" style="height:16px;width:auto;vertical-align:middle;margin-right:4px;border-radius:2px"></span>
         <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--green);letter-spacing:.12em;padding:5px 12px;border:1px solid rgba(15,107,56,.4);background:var(--green-dim)">BAJADAS PREVISTAS</span>
       </div>
     </div>
 
-    <!-- Fila 2: puntos -->
-    <div style="background:var(--surface);border:1px solid var(--border);border-top:none;padding:16px 36px">
-      <ul class="mp-points">
-        <li><strong style="color:var(--white)">Inflación:</strong> BCE con política disciplinada — inflación cerca del 2%, con riesgos al alza.</li>
-        <li><strong style="color:var(--white)">Frentes abiertos:</strong> varios países con dificultades para aprobar presupuestos y reducir déficit.</li>
-      </ul>
+    <!-- Fila 2: puntos en horizontal -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-top:none;padding:14px 20px">
+      <div style="display:flex;align-items:flex-start;gap:0">
+        <div style="flex:1;padding:0 12px;border-right:1px solid var(--border)">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;color:#000;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Inflación</div>
+          <div style="font-size:12px;color:#000;font-weight:500;line-height:1.5">BCE con política disciplinada — cerca del 2%, con riesgos al alza.</div>
+        </div>
+        <div style="flex:1;padding:0 12px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;color:#000;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Frentes abiertos</div>
+          <div style="font-size:12px;color:#000;font-weight:500;line-height:1.5">Varios países con dificultades para aprobar presupuestos y reducir déficit.</div>
+        </div>
+      </div>
     </div>
-    <div style="background:var(--surface);border:1px solid var(--border);border-top:none;padding:16px 36px">
-      <ul class="mp-points">
-        <li><strong style="color:var(--white)">OBBB:</strong> expansión fiscal estructural con deuda pública al 120% del PIB y pago de intereses en 3% del PIB.</li>
-        <li><strong style="color:var(--white)">Riesgo inflacionario:</strong> aranceles, salarios y expansión fiscal podrían limitar el margen de bajadas.</li>
-      </ul>
+    <div style="background:var(--surface);border:1px solid var(--border);border-top:none;padding:14px 20px">
+      <div style="display:flex;align-items:flex-start;gap:0">
+        <div style="flex:1;padding:0 12px;border-right:1px solid var(--border)">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;color:#000;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">OBBB</div>
+          <div style="font-size:12px;color:#000;font-weight:500;line-height:1.5">Expansión fiscal estructural — deuda pública al 120% del PIB y pago de intereses en 3% del PIB.</div>
+        </div>
+        <div style="flex:1;padding:0 12px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;color:#000;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Riesgo inflacionario</div>
+          <div style="font-size:12px;color:#000;font-weight:500;line-height:1.5">Aranceles, salarios y expansión fiscal podrían limitar el margen de bajadas.</div>
+        </div>
+      </div>
     </div>
 
     <!-- Fila 3: veredicto -->
@@ -408,7 +422,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 96px
     <!-- BUND izquierda -->
     <div class="reveal d2">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:2px solid var(--red)">
-        <span style="font-size:28px">🇩🇪</span>
+        <span style="font-size:28px;line-height:1;display:inline-block;width:36px">🇩🇪</span>
         <div>
           <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--red);letter-spacing:.18em;text-transform:uppercase">Posición Corta</div>
           <div style="font-size:16px;font-weight:700;color:var(--white);margin-top:2px">Bund Alemán · 7,5Y</div>
@@ -425,7 +439,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 96px
         </div>
       </div>
       <table class="dt">
-        <tr><th>Campo</th><th>TD 11/03</th><th>SD 30/12</th></tr>
+        <tr><th>Campo</th><th>11/03</th><th>30/12</th></tr>
         <tr><td>ISIN</td><td colspan="2" style="color:var(--dim)">DE000BU2Z015</td></tr>
         <tr><td>Vencimiento</td><td colspan="2" style="color:var(--dim)">15/08/2033</td></tr>
         <tr><td>Venc. en años</td><td class="warn">7,44</td><td class="warn">6,63</td></tr>
@@ -438,10 +452,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 96px
     <!-- TREASURY derecha -->
     <div class="reveal d3">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:2px solid var(--green)">
-        <span style="font-size:28px">🇺🇸</span>
+        <span style="font-size:28px;line-height:1;display:inline-block;width:36px">🇺🇸</span>
         <div>
           <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--green);letter-spacing:.18em;text-transform:uppercase">Posición Larga</div>
-          <div style="font-size:16px;font-weight:700;color:var(--white);margin-top:2px">Treasury · 1,5Y</div>
+          <div style="font-size:16px;font-weight:700;color:var(--white);margin-top:2px">US Treasury · 1,5Y</div>
         </div>
         <div style="margin-left:auto;display:flex;gap:8px">
           <div style="text-align:center;background:var(--surface);border:1px solid var(--border);padding:10px 16px">
@@ -455,7 +469,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 96px
         </div>
       </div>
       <table class="dt">
-        <tr><th>Campo</th><th>TD 11/03</th><th>SD 30/12</th></tr>
+        <tr><th>Campo</th><th>11/03</th><th>30/12</th></tr>
         <tr><td>ISIN</td><td colspan="2" style="color:var(--dim)">US91282CKV27</td></tr>
         <tr><td>Vencimiento</td><td colspan="2" style="color:var(--dim)">15/06/2027</td></tr>
         <tr><td>Venc. en años</td><td class="warn">1,26</td><td class="warn">0,46</td></tr>
@@ -569,7 +583,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 96px
     <!-- Gráfico -->
     <div>
       <div class="sl-chart-box">
-        <div class="chart-label">TIR Bund 7Y · Media y bandas de desviación estándar (Jul 2022 – Mar 2026)</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#000;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;padding:8px 0;border-bottom:2px solid var(--border);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">TIR BUND 7Y · MEDIA Y BANDAS DE DESVIACIÓN ESTÁNDAR (JUL 2022 – MAR 2026)</div>
         <canvas id="slChart" height="220"></canvas>
         <div class="chart-legend" style="margin-top:10px">
           <div class="cl-item"><span class="cl-dot" style="background:#4A9ECC"></span>TIR 7Y</div>
@@ -691,84 +705,85 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 96px
   </div>
 </section>
 
-<!-- ═══ 07 RIESGOS + CONCLUSIÓN ══════════════════════════════ -->
-<section id="riesgos">
-  <div class="sec-num reveal">07 — Riesgos &amp; Recomendación</div>
+<!-- ═══ 08 RIESGOS ADICIONALES & CONCLUSIÓN FINAL ════════════ -->
+<section id="conclusion" style="background:var(--bg2)">
+  <div class="sec-num reveal">08 — Riesgos &amp; Conclusión</div>
+  <h2 class="sec-title reveal d1">Riesgos clave<br><em>&amp; Conclusión final</em></h2>
 
-  <h2 class="sec-title reveal d1">Escenarios adversos<br><em>&amp; Recomendación final</em></h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start">
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+    <!-- RIESGOS ADICIONALES -->
+    <div class="reveal d2">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)">Riesgos identificados</div>
 
-    <!-- RIESGOS -->
-    <div>
-      <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#000;margin-bottom:20px">Escenarios<br><em style="color:var(--red)">adversos</em></h3>
-      <div class="risk-list">
-        <div class="risk-item reveal d2">
-          <div class="risk-n r1">01</div>
-          <div class="risk-content">
-            <div class="risk-title">Inflación persistente — tipos altos más tiempo</div>
-            <div class="risk-desc">Aranceles, salarios y OBBB mantienen inflación elevada. TIRes de Treasuries repuntan. La posición larga pierde valor.</div>
-          </div>
-          <div class="risk-badge rb1">Larga</div>
+      <!-- Riesgo divisa -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--blue);padding:24px 20px;margin-bottom:14px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--blue);width:32px;flex-shrink:0">04</span>
+          <div style="font-size:14px;font-weight:700;color:#000">Riesgo divisa EUR/USD</div>
+          <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(21,88,160,.4);color:var(--blue)">Posición larga</span>
         </div>
-        <div class="risk-item reveal d3">
-          <div class="risk-n r2">02</div>
-          <div class="risk-content">
-            <div class="risk-title">Europa en recesión — bajadas de tipos</div>
-            <div class="risk-desc">Recesión profunda fuerza al BCE a bajar tipos. Precio del Bund sube, perjudicando la posición corta.</div>
-          </div>
-          <div class="risk-badge rb2">Corta</div>
-        </div>
-        <div class="risk-item reveal d4">
-          <div class="risk-n r3">03</div>
-          <div class="risk-content">
-            <div class="risk-title">Convergencia de políticas monetarias</div>
-            <div class="risk-desc">BCE y FED actúan coordinadamente. El spread no se mueve. El trade no genera retorno — riesgo principal.</div>
-          </div>
-          <div class="risk-badge rb3">Trade</div>
-        </div>
+        <div style="font-size:13px;color:#111;font-weight:500;line-height:1.6">La posición larga en Treasury está denominada en USD. Una apreciación del EUR frente al USD reduce el retorno en términos europeos. El coste de cobertura (2,71%) supera el retorno del bono — posición sin cobertura es más eficiente pero asume riesgo de tipo de cambio. EUR/USD: 1,1575 → 1,175 previsto.</div>
       </div>
-      <div class="risk-footer reveal d5" style="margin-top:8px">
-        "El riesgo principal es la convergencia de políticas — neutralizaría el trade por completo."
+
+      <!-- Riesgo liquidez -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);padding:24px 20px;margin-bottom:14px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--gold);width:32px;flex-shrink:0">05</span>
+          <div style="font-size:14px;font-weight:700;color:#000">Riesgo de liquidez y ejecución</div>
+          <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(138,106,16,.4);color:var(--gold)">Trade completo</span>
+        </div>
+        <div style="font-size:13px;color:#111;font-weight:500;line-height:1.6">En momentos de estrés de mercado, el Bund y el Treasury pueden experimentar movimientos bruscos simultáneos.</div>
+      </div>
+
+      <!-- Fila: Geopolítico solo -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid #6B4C9A;padding:24px 20px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#6B4C9A;width:28px;flex-shrink:0">06</span>
+          <div style="font-size:13px;font-weight:700;color:#000">Riesgo geopolítico y energía</div>
+          <span style="margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(107,76,154,.4);color:#6B4C9A">Trade completo</span>
+        </div>
+        <div style="font-size:13px;color:#111;font-weight:500;line-height:1.6">Un shock energético podría disparar la inflación en Europa, forzando al BCE a mantener tipos más de lo previsto.</div>
       </div>
     </div>
 
-    <!-- CONCLUSIÓN -->
-    <div class="reveal d2">
-      <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#000;margin-bottom:20px">Recomendación<br><em style="color:var(--gold)">final</em></h3>
-      <div class="conc-quote" style="margin-bottom:20px">
-        <p>"La divergencia BCE/FED, amplificada por el OBBB y la expansión fiscal alemana, crea una oportunidad estructural. Una cartera 70% corta en Bund / 30% larga en Treasury ofrece carry atractivo y potencial de plusvalías en el escenario base."</p>
+    <!-- CONCLUSIÓN FINAL -->
+    <div class="reveal d3">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)">Conclusión final</div>
+
+      <div class="conc-quote" style="margin-bottom:20px;text-align:center">
+        <p style="text-align:center">"La divergencia estructural entre BCE y FED, amplificada por el OBBB y los frentes fiscales abiertos en Europa, ofrece una oportunidad de spread trade clara: corto Bund 7,5Y (70%) y largo Treasury 1,5Y (30%). El perfil riesgo-retorno es favorable en el escenario base, con carry positivo mientras se materializa el movimiento de tipos."</p>
       </div>
-      <div class="conc-pillars" style="grid-template-columns:1fr;gap:2px;margin-bottom:16px">
-        <div class="cp">
-          <div class="cp-title">Soporte Macro</div>
-          <div class="cp-body"><strong>Subidas previstas Europa vs bajadas EE.UU.</strong> OBBB + expansión fiscal alemana divergencia estructural confirmada.</div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:16px">
+        <div style="background:var(--surface);border:1px solid var(--border);border-top:2px solid var(--blue);padding:18px 20px;text-align:center">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#000;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">Resultado sin cobertura</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--green)">0,69%</div>
         </div>
-        <div class="cp">
-          <div class="cp-title">Soporte Cuantitativo</div>
-          <div class="cp-body"><strong>Rolling Yield Treasury 1,491%.</strong> Stop loss Bund superado (2,55% ✓). TIR objetivo Bund 3,15% (+2σ). Resultados: sin cobertura 0,69% · con cobertura 0,40%.</div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-top:2px solid var(--gold);padding:18px 20px;text-align:center">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#000;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">Resultado con cobertura</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--gold)">0,40%</div>
         </div>
-        <div class="cp">
-          <div class="cp-title">Perfil Riesgo-Retorno</div>
-          <div class="cp-body"><strong>Favorable en escenario base.</strong> 70% Bund corto / 30% Treasury largo. Riesgo acotado y monitorizable.</div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-top:none;padding:18px 20px;text-align:center">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#000;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">TIR objetivo Bund</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--red)">3,15%</div>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-top:none;padding:18px 20px;text-align:center">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#000;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">TIR objetivo Treasury</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;color:var(--green)">3,30%</div>
         </div>
       </div>
-      <div class="conc-tags" style="margin-bottom:20px">
+
+      <div class="conc-tags" style="margin-bottom:16px">
         <div class="ctag" style="background:rgba(21,88,160,.1);border:1px solid rgba(21,88,160,.3);color:var(--blue)">🔵 70% Corto Bund</div>
         <div class="ctag green">🟢 30% Largo Treasury</div>
         <div class="ctag gold">⚡ Divergencia BCE/FED</div>
       </div>
 
-      <!-- LINK EXCEL -->
-      <div style="margin-top:16px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;gap:16px">
-        <span style="font-size:22px">📊</span>
-        <div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#000;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:4px">Material de trabajo · Hoja de cálculo</div>
-          <a href="https://docs.google.com/spreadsheets/d/1ttp-KwlLC4mJygRnJ_rNEJ1XPKO8Dbhn/edit?usp=sharing&ouid=103393855784078189357&rtpof=true&sd=true" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--blue);font-weight:700;text-decoration:underline;letter-spacing:.04em">Ver Excel en Google Sheets →</a>
-        </div>
+      <div style="padding:14px 18px;background:rgba(176,30,30,.06);border-left:3px solid var(--red);font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:#333;line-height:1.6">
+        "El riesgo de convergencia de políticas y el riesgo divisa son los principales factores a monitorizar. La posición sin cobertura EUR/USD maximiza el retorno asumiendo exposición cambiaria."
       </div>
     </div>
-
   </div>
 </section>
 
@@ -776,6 +791,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 96px
   <div>
     <div class="footer-brand">Bund vs Treasuries</div>
     <div class="footer-sub">Instituto BME · Máster en Mercados Financieros · 2026</div>
+    <div style="margin-top:10px;display:flex;align-items:center;gap:10px">
+      <span style="font-size:16px">📊</span>
+      <a href="https://docs.google.com/spreadsheets/d/1ttp-KwlLC4mJygRnJ_rNEJ1XPKO8Dbhn/edit?usp=sharing" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blue);font-weight:700;text-decoration:underline;letter-spacing:.04em;cursor:pointer">Material de trabajo · Ver Excel →</a>
+    </div>
   </div>
   <div class="footer-authors">
     Lur Mendibe<br>
